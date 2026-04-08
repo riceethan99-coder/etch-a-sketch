@@ -1,6 +1,7 @@
 body {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 #container {
@@ -8,6 +9,7 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     width: 800px;
+    height: 800px;
 }
 
 .grid-square {
