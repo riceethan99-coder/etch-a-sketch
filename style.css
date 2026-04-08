@@ -19,3 +19,8 @@ body {
     width: 50px; 
 }
 
+button { 
+    margin: 25px;
+    cursor: grab;
+}
+
