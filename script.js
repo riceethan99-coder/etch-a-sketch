@@ -3,8 +3,13 @@ const container = document.getElementById("container")
 for(let i = 0; i < 256; i++) {
     const newDiv = document.createElement("div")
     newDiv.classList.add("grid-square")
+    let hoverCounter = 0 
+    let r = randomNumber()
+    let g = randomNumber()
+    let b = randomNumber()
     newDiv.addEventListener("mouseenter", function() {
-        newDiv.style.backgroundColor = `rgb(${randomNumber()}, ${randomNumber()}, ${randomNumber()})`
+        hoverCounter = hoverCounter + 1
+        newDiv.style.backgroundColor = `rgb(${Math.max(0,r * (1 - hoverCounter * 0.1))}, ${Math.max(0, g * (1 - hoverCounter * 0.1))}, ${Math.max(0, b * (1 - hoverCounter * 0.1))})`
     }) 
     container.appendChild(newDiv)
 }
@@ -22,10 +27,15 @@ resetBtn.addEventListener("click", function() {
     for(let i = 0; i < resizeSize * resizeSize; i++) {
         const newDiv = document.createElement("div")
         newDiv.classList.add("grid-square")
+        let hoverCounter = 0 
+        let r = randomNumber()
+        let g = randomNumber()
+        let b = randomNumber()
         newDiv.style.width = `${800 / resizeSize}px`
         newDiv.style.height = `${800 / resizeSize}px`
         newDiv.addEventListener("mouseenter", function() {
-        newDiv.style.backgroundColor = `rgb(${randomNumber()}, ${randomNumber()}, ${randomNumber()})`
+        hoverCounter = hoverCounter + 1
+        newDiv.style.backgroundColor = `rgb(${Math.max(0,r * (1 - hoverCounter * 0.1))}, ${Math.max(0, g * (1 - hoverCounter * 0.1))}, ${Math.max(0, b * (1 - hoverCounter * 0.1))})`
     })
     container.appendChild(newDiv)
    }
